@@ -33,7 +33,7 @@ class RelationshipType(models.Model):
 
 class Profile(User):
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE, related_name="profiles", blank=True, null=True)
-    genders_attracted_to = models.ManyToManyField(Gender, related_name="profiles_interested", blank=True, null=True)
+    genders_attracted_to = models.ManyToManyField(Gender, related_name="profiles_interested")
     #location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name="profiles", null=True)
     #locations_interested_in = models.ManyToManyField(Location, related_name="profiles_interested")
     relationship_types_interested_in = models.ManyToManyField(RelationshipType, related_name="profiles")
